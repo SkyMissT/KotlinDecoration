@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         starAdapter = StarAdapter(mContext, mData)
 
-        recyclerView.addItemDecoration(StarDecoration(mContext))
+        recyclerView.addItemDecoration(MyDecoration(mContext))
+//        recyclerView.addItemDecoration(StarDecoration(mContext))
         recyclerView.adapter = starAdapter
     }
 
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     private fun init(){
         mData = ArrayList()
         for (i in 0 until 4){
-            for (j in 0 until 20) {
+            for (j in 0 until 10) {
                 if (i % 2 == 0) {
                     mData.add(Star("何炅$j", "快乐家族$i"))
                 } else {
