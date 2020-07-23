@@ -3,6 +3,7 @@ package com.miss.test
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
@@ -20,9 +21,10 @@ class MainActivity : AppCompatActivity() {
         init()
         mContext = this
         recyclerView = findViewById(R.id.rv_list)
+        recyclerView.layoutManager = LinearLayoutManager(this)
         starAdapter = StarAdapter(mContext, mData)
 
-//        recyclerView.addItemDecoration(StarDecoration(mContext))
+        recyclerView.addItemDecoration(StarDecoration(mContext))
         recyclerView.adapter = starAdapter
     }
 
